@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haske Pay — Electricity, Airtime & Data Payments</title>
+<meta name="description" content="Haske Pay lets you buy electricity tokens, airtime and data bundles from one wallet. Operated by AYH Hamsuky Enterprises, Kaduna, Nigeria.">
+<style>
+:root{--navy:#0d2748;--blue:#123b60;--green:#07945f;--green-d:#087e52;--ink:#142f50;--muted:#64748b;--line:#e3eaf1;--soft:#f5f8fb}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1160px;margin:auto;padding:0 24px}
+nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.logo{width:40px;height:40px;border-radius:12px;background:var(--green);display:grid;place-items:center;color:#fff;font-weight:900;font-size:20px}
+.brand strong{font-size:21px;letter-spacing:-.5px;display:block;line-height:1.1}
+.brand small{font-size:10px;letter-spacing:1px;color:#76869a;display:block}
+.links{display:flex;gap:26px}.links a{font-size:14px;font-weight:600;color:#53677e;text-decoration:none}.links a:hover{color:var(--green)}
+.btn{display:inline-block;text-decoration:none;border-radius:10px;padding:12px 20px;font-size:14px;font-weight:800;border:1px solid transparent}
+.btn.primary{background:var(--green);color:#fff}.btn.primary:hover{background:var(--green-d)}
+.btn.light{background:#fff;color:var(--navy)}
+.btn.outline{border-color:#dbe5ee;color:var(--ink)}
+.hero{background:radial-gradient(circle at 80% 10%,#245b7b 0,transparent 35%),linear-gradient(115deg,#0d2748 0%,#123b60 62%,#11644e 100%);color:#fff}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-top:76px;padding-bottom:84px}
+.badge{display:inline-block;padding:7px 13px;border-radius:30px;background:#ffffff14;border:1px solid #ffffff2a;font-size:11px;font-weight:700;letter-spacing:.3px;color:#dcefe8}
+.hero h1{font-size:clamp(36px,5vw,60px);line-height:1.06;letter-spacing:-2.2px;margin:20px 0 18px}
+.hero h1 em{color:#45e2a5;font-style:normal}
+.hero p{font-size:16px;color:#d1dfed;max-width:520px;margin:0 0 26px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.foot{font-size:12px;color:#a9bfd3;margin-top:18px}
+.phone{background:#fff;color:var(--ink);border:7px solid #dce6ee;border-radius:28px;padding:18px;max-width:350px;margin:auto;box-shadow:0 30px 80px #061a2e65}
+.phone .top{display:flex;justify-content:space-between;font-size:12px;color:#718096;margin-bottom:14px}
+.bal{background:linear-gradient(135deg,#112d50,#1a5780);color:#fff;border-radius:15px;padding:18px;margin-bottom:16px}
+.bal small{color:#c5d7e6;font-size:10px}.bal strong{display:block;font-size:28px;margin:8px 0 4px}
+.ps{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.ps div{border:1px solid #e5ebf1;border-radius:11px;padding:12px 4px;text-align:center;font-size:11px;font-weight:700}
+.ps i{display:block;font-style:normal;font-size:22px;margin-bottom:5px}
+.phone .note{font-size:11px;color:#8290a3;text-align:center;margin-top:14px}
+section{padding:72px 0}
+.head{text-align:center;max-width:680px;margin:0 auto 38px}
+.kick{text-transform:uppercase;letter-spacing:1.6px;font-size:11px;color:#078b59;font-weight:900;margin-bottom:10px}
+.head h2{font-size:clamp(26px,3vw,36px);letter-spacing:-1px;line-height:1.15;margin:0 0 12px}
+.head p{color:var(--muted);margin:0;font-size:15px}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tile{border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 5px 22px #102b4e08}
+.ti{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;font-size:25px;background:#e7f7ef;margin-bottom:18px}
+.tile:nth-child(2) .ti{background:#fff2d9}.tile:nth-child(3) .ti{background:#e8efff}
+.tile h3{margin:0 0 8px;font-size:18px}.tile p{margin:0;color:var(--muted);font-size:14px}
+.alt{background:var(--soft);border-top:1px solid #e8edf3;border-bottom:1px solid #e8edf3}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{display:flex;gap:15px;padding:22px;background:#fff;border:1px solid var(--line);border-radius:14px}
+.num{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:#e7f7ef;color:#078b59;font-weight:900;flex-shrink:0}
+.step h3{margin:2px 0 6px;font-size:15px}.step p{margin:0;font-size:13px;color:var(--muted)}
+.feat{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.f{padding:20px;border-radius:13px;background:var(--soft);border:1px solid #e7edf3}
+.f b{display:block;font-size:14px;margin-bottom:6px}.f p{margin:0;font-size:12.5px;color:var(--muted)}
+.agent{background:linear-gradient(115deg,#0f2c4d,#145a55);color:#fff;border-radius:20px;padding:38px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.agent h2{margin:0 0 8px;font-size:26px;letter-spacing:-.8px}.agent p{margin:0;color:#c7d9e0;max-width:580px;font-size:14px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.about h2{font-size:30px;letter-spacing:-1px;margin:0 0 14px}
+.about p{color:var(--muted);font-size:15px;margin:0 0 12px}
+.card{border:1px solid var(--line);border-radius:16px;padding:26px}
+.card dl{margin:0;display:grid;gap:14px}
+.card dt{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#78889c;font-weight:800}
+.card dd{margin:2px 0 0;font-size:15px;font-weight:600}
+.card dd a{color:var(--green);text-decoration:none}
+.legal{max-width:820px;margin:auto}
+.legal h2{font-size:26px;letter-spacing:-.6px;margin:0 0 6px}
+.legal h3{font-size:15px;margin:22px 0 6px}
+.legal p,.legal li{font-size:14px;color:#4b5d72}
+.legal ul{padding-left:20px;margin:6px 0}
+.upd{font-size:12px;color:#8290a3}
+footer{background:#0b213b;color:#c6d5e4;padding:30px 0;font-size:12.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer strong{color:#fff;font-size:15px}
+footer a{text-decoration:none;margin-right:16px}footer a:hover{color:#fff}
+@media(max-width:850px){.links{display:none}.hero .wrap{grid-template-columns:1fr;gap:40px;padding-top:54px}.tiles,.steps,.about{grid-template-columns:1fr}.feat{grid-template-columns:1fr 1fr}.agent{flex-direction:column;align-items:flex-start;padding:28px}}
+@media(max-width:520px){.hero h1{font-size:38px;letter-spacing:-1.6px}.feat{grid-template-columns:1fr}nav .btn.outline{display:none}}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <nav>
+    <a class="brand" href="#top"><div class="logo">H</div><div><strong>Haske Pay</strong><small>PAY BILLS. STAY CONNECTED.</small></div></a>
+    <div class="links"><a href="#services">Services</a><a href="#how">How it works</a><a href="#agents">Agents</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+    <a class="btn primary" href="#contact">Get started</a>
+  </nav>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="badge">ELECTRICITY · AIRTIME · DATA</span>
+      <h1>Pay bills. Buy data.<br><em>Keep life moving.</em></h1>
+      <p>Haske Pay is one simple wallet for your everyday payments. Buy prepaid electricity tokens, top up airtime and get data bundles, in English or Hausa.</p>
+      <div class="cta"><a class="btn primary" href="#contact">Get started</a><a class="btn light" href="#services">See our services</a></div>
+      <div class="foot">⚡ Electricity &nbsp;·&nbsp; 📱 Airtime &nbsp;·&nbsp; 🌐 Data bundles</div>
+    </div>
+    <div>
+      <div class="phone">
+        <div class="top"><b style="color:#12395d">◉ Haske Pay</b><span>Wallet · NGN</span></div>
+        <div class="bal"><small>WALLET BALANCE</small><strong>₦12,500.00</strong><small>Fund by bank transfer</small></div>
+        <div class="ps"><div><i>⚡</i>Electricity</div><div><i>📱</i>Airtime</div><div><i>🌐</i>Data</div></div>
+        <div class="note">Illustration of the Haske Pay app</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="services"><div class="wrap">
+  <div class="head"><div class="kick">What we offer</div><h2>The bills you pay, all in one place.</h2><p>Choose what you need and follow a simple, guided payment flow.</p></div>
+  <div class="tiles">
+    <article class="tile"><div class="ti">⚡</div><h3>Electricity</h3><p>Buy prepaid tokens or pay postpaid bills for electricity distribution companies across Nigeria. Your meter is checked before you pay.</p></article>
+    <article class="tile"><div class="ti">📱</div><h3>Airtime top-up</h3><p>Recharge MTN, Airtel, Glo or 9mobile. Enter the number, choose an amount and confirm.</p></article>
+    <article class="tile"><div class="ti">🌐</div><h3>Data bundles</h3><p>Pick a data plan for your network and send it to your own number or someone else's.</p></article>
+  </div>
+</div></section>
+
+<section class="alt" id="how"><div class="wrap">
+  <div class="head"><div class="kick">How it works</div><h2>Three steps. Less hassle.</h2><p>Check the details and see exactly what happened to every payment.</p></div>
+  <div class="steps">
+    <div class="step"><div class="num">01</div><div><h3>Fund your wallet</h3><p>Add money to your Haske Pay wallet by bank transfer to your dedicated account number.</p></div></div>
+    <div class="step"><div class="num">02</div><div><h3>Choose and confirm</h3><p>Select electricity, airtime or data, enter the details, review the total and confirm with your PIN.</p></div></div>
+    <div class="step"><div class="num">03</div><div><h3>Get your token or top-up</h3><p>Receive your token or top-up and find it in your transaction history. If a purchase fails, the amount is returned to your wallet.</p></div></div>
+  </div>
+  <div class="feat" style="margin-top:30px">
+    <div class="f"><b>One wallet</b><p>Keep your spending money together and see your balance at a glance.</p></div>
+    <div class="f"><b>Clear history</b><p>Every purchase has a reference and a status you can check.</p></div>
+    <div class="f"><b>Hausa and English</b><p>Use the app in the language you are most comfortable with.</p></div>
+    <div class="f"><b>Refunds for failed payments</b><p>Failed purchases are returned to your wallet.</p></div>
+  </div>
+</div></section>
+
+<section id="agents"><div class="wrap">
+  <div class="agent">
+    <div><h2>Run a bill-payment business?</h2><p>Become a Haske Pay agent and serve customers in your neighbourhood with electricity, airtime and data, and earn commission on every sale. Get in touch to find out how to join.</p></div>
+    <a class="btn light" href="#contact">Talk to us</a>
+  </div>
+</div></section>
+
+<section class="alt" id="about"><div class="wrap about">
+  <div>
+    <div class="kick">About Haske Pay</div>
+    <h2>Built in Kaduna, for everyday Nigerians.</h2>
+    <p>Haske Pay is a bill payment service operated by AYH Hamsuky Enterprises, a registered technology company based in Kaduna, Nigeria. Our goal is to make paying for electricity, airtime and data fast, clear and available in the languages people speak.</p>
+    <p>"Haske" means "light" in Hausa.</p>
+  </div>
+  <div class="card"><dl>
+    <div><dt>Operated by</dt><dd>AYH Hamsuky Enterprises</dd></div>
+    <div><dt>Registration</dt><dd>CAC Business Name · BN 8483128</dd></div>
+    <div><dt>Location</dt><dd>Kaduna, Nigeria</dd></div>
+    <div><dt>Founder</dt><dd>Abubakar Yahya Hamza</dd></div>
+  </dl></div>
+</div></section>
+
+<section id="contact"><div class="wrap about">
+  <div>
+    <div class="kick">Contact</div>
+    <h2>We'd love to hear from you.</h2>
+    <p>Questions about the service, a payment issue, or becoming an agent? Reach us using the details here.</p>
+  </div>
+  <div class="card"><dl>
+    <div><dt>Email</dt><dd><a href="mailto:yahyaabubakar5@gmail.com">yahyaabubakar5@gmail.com</a></dd></div>
+    <div><dt>Phone / WhatsApp</dt><dd><a href="tel:+2348133805942">0813 380 5942</a></dd></div>
+    <div><dt>Location</dt><dd>Kaduna, Nigeria</dd></div>
+    <div><dt>Business</dt><dd>AYH Hamsuky Enterprises (BN 8483128)</dd></div>
+  </dl></div>
+</div></section>
+
+<section class="alt" id="terms"><div class="wrap legal">
+  <h2>Terms of Service</h2><div class="upd">Last updated: 11 November 2026</div>
+  <h3>1. About the service</h3><p>Haske Pay is operated by AYH Hamsuky Enterprises ("we", "us"). It lets you buy electricity tokens, airtime and data using money held in your Haske Pay wallet.</p>
+  <h3>2. Your account</h3><p>You must provide accurate information and keep your login details and transaction PIN private. You are responsible for activity that happens with your PIN.</p>
+  <h3>3. Wallet and payments</h3><ul><li>You fund your wallet by bank transfer. Funds appear in your wallet once the payment is confirmed.</li><li>Purchases are paid from your wallet balance. A small service fee may apply and is shown before you confirm.</li><li>Please check the meter number, phone number and amount carefully. Purchases sent to a wrong number or meter that you entered cannot normally be reversed.</li></ul>
+  <h3>4. Failed and pending purchases</h3><p>If a purchase fails, the amount is returned to your wallet. If a purchase is pending, we check its status with the service provider and will complete it or refund it once a final result is known. Please do not repeat a pending purchase.</p>
+  <h3>5. Third-party providers</h3><p>Electricity, airtime and data are delivered through licensed third-party providers. We are not responsible for outages or delays on the networks or distribution companies' side.</p>
+  <h3>6. Acceptable use</h3><p>You may not use Haske Pay for fraud, money laundering or any unlawful activity. We may suspend accounts that do so.</p>
+  <h3>7. Changes and contact</h3><p>We may update these terms from time to time. Questions can be sent to yahyaabubakar5@gmail.com.</p>
+</div></section>
+
+<section id="privacy"><div class="wrap legal">
+  <h2>Privacy Policy</h2><div class="upd">Last updated: 11 November 2026</div>
+  <h3>What we collect</h3><p>Your name, phone number, email address, meter numbers, transaction records, and wallet activity needed to provide the service.</p>
+  <h3>How we use it</h3><ul><li>To process your purchases and keep your wallet accurate</li><li>To send tokens, receipts and service messages</li><li>To prevent fraud and meet legal obligations</li><li>To provide support when you contact us</li></ul>
+  <h3>Sharing</h3><p>We share only what is needed with the payment and service providers that complete your transactions. We do not sell your personal information.</p>
+  <h3>Security and retention</h3><p>We use reasonable safeguards to protect your data and keep records only as long as needed for the service and legal requirements.</p>
+  <h3>Your rights</h3><p>You may ask to see, correct or delete your personal data, in line with the Nigeria Data Protection Act. Contact us at yahyaabubakar5@gmail.com.</p>
+</div></section>
+
+<footer><div class="wrap">
+  <div><strong>Haske Pay</strong><div>A product of AYH Hamsuky Enterprises · BN 8483128 · Kaduna, Nigeria</div></div>
+  <div><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a><a href="#terms">Terms</a><a href="#privacy">Privacy</a></div>
+  <div>© 2026 Haske Pay</div>
+</div></footer>
+
+</body>
+</html>
